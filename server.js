@@ -21,6 +21,10 @@ const isValidDate = dateString => {
   return regEx.test(dateString);
 }
 
+app.get("/", (req, res) => {
+  res.send("Express server working on Vercel");
+});
+
 app.get('/api/v1/customers', (req, res) => {
   const { customers } = app.locals;
   res.status(200).json({ customers });
